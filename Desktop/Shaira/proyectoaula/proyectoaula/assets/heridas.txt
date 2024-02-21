@@ -1,0 +1,161 @@
+import 'package:flutter/material.dart';
+import './drawer.dart';
+
+class ContactScreen extends StatelessWidget {
+  const ContactScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: const MyDrawer(),
+      appBar: AppBar(
+        title: const Text('Técnicas Asépticas'),
+      ),
+      body: Center(
+        child: Column(
+          children: const <Widget>[
+            SizedBox(height: 30.0),
+            SizedBox(
+              height: 60.0,
+              child: Text("Procedimientos", style: TextStyle(fontSize: 25)),
+            ),
+            ElevatedCardExample1(),
+            SizedBox(height: 15.0),
+            ElevatedCardExample2(),
+            SizedBox(
+              height: 15.0,
+            ),
+            ElevatedCardExample3(),
+            Spacer(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ElevatedCardExample1 extends StatelessWidget {
+  const ElevatedCardExample1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 4,
+            offset: Offset(0, 1),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.lightBlue,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(12), topLeft: Radius.circular(12)),
+            ),
+            child: Text("Primer procedimiento"),
+            padding: const EdgeInsets.all(12),
+            width: 300,
+          ),
+          Container(
+            child:
+                Text("Se cubre la herida quirúrgica con una compresa estéril"),
+            padding: const EdgeInsets.all(12),
+            width: 300,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class ElevatedCardExample2 extends StatelessWidget {
+  const ElevatedCardExample2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 4,
+            offset: Offset(0, 1),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.lightBlue,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(12), topLeft: Radius.circular(12)),
+            ),
+            child: Text("Segundo procedimiento"),
+            padding: const EdgeInsets.all(12),
+            width: 300,
+          ),
+          Container(
+            child: Text(
+                "Con una compresa húmeda se limpia la herida quirúrgica en un solo sentido, luego se cubre la herida con una compresa seca y se limpia alrededor de la herida con una compresa húmeda."),
+            padding: const EdgeInsets.all(12),
+            width: 300,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class ElevatedCardExample3 extends StatelessWidget {
+  const ElevatedCardExample3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 4,
+            offset: Offset(0, 1),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.lightBlue,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(12), topLeft: Radius.circular(12)),
+            ),
+            child: Text("Tercer procedimiento"),
+            padding: const EdgeInsets.all(12),
+            width: 300,
+          ),
+          Container(
+            child: Text(
+                "Luego se colocan los apósitos con la mano opuesta con la que se limpio alrededor de la herida."),
+            padding: const EdgeInsets.all(12),
+            width: 300,
+          )
+        ],
+      ),
+    );
+  }
+}
